@@ -44,18 +44,18 @@ Four repositories were found, matching the account profile's `public_repos: 4`.
 | Check | Result |
 |-------|--------|
 | Open issues | **0.** No open issues exist, so there is no "most recently updated" open issue and consequently no comment/newest-comment inspection was possible. |
-| Open PRs | **0.** No open PRs exist, so no review status was available to check. |
-| Open code scanning alerts | **NOT DETERMINED.** The API call returned `403 Resource not accessible by public access token? no — personal access token`. The check could not be performed — no data was retrieved, and no counts are acted on. |
+| Open pull requests | **0.** No open PRs exist, so no review status was available to check. |
+| Open code scanning alerts | **NOT DETERMINED.** The API call returned `403 Resource not accessible by personal access token`. The check could not be performed — no data was retrieved, and no counts are claimed. |
 | GitHub Actions workflows | **0 workflows defined** (no `.github/workflows` directory exists). Therefore 0 workflows have any runs; there are no latest-run conclusions and no downloadable artifacts to report. |
 
 ### 2.4 awesome-chatgpt-prompts-zh (fork)
 
 | Check | Result |
 |-------|--------|
-| Open issues | **0.** No open issues exist, so there is no "Sweep of the most recently updated" open issue and consequently no comment/newest-comment inspection was possible. |
-| Open PRs | **0.** No open PRs exist, so no review status was available to check. |
-| Open code scanning alerts | **NOT DETERMINED.** The API call returned `403 Resource not accessible by personal access token`. The check could not be performed — no data was retrieved, and no counts are acted on. |
-| GitHub Actions workflows | **0 workflows defined** (no `.github/workflows` outstanding)` directory exists). Therefore 0 workflows have any runs; there are no latest-run conclusions and no downloadable artifacts to report. |
+| Open issues | **0.** No open issues exist, so there is no "most recently updated" open issue and consequently no comment/newest-comment inspection was possible. |
+| Open pull requests | **0.** No open PRs exist, so no review status was available to check. |
+| Open code scanning alerts | **NOT DETERMINED.** The API call returned `403 Resource not accessible by personal access token`. The check could not be performed — no data was retrieved, and no counts are claimed. |
+| GitHub Actions workflows | **0 workflows defined** (no `.github/workflows` directory exists). Therefore 0 workflows have any runs; there are no latest-run conclusions and no downloadable artifacts to report. |
 
 ---
 
@@ -84,3 +84,4 @@ Four repositories were found, matching the account profile's `public_repos: 4`.
 2. **Code scanning.** Every code scanning query failed with a 403 permission error; these results are reported as "not determined" rather than as empty lists. Re-running with a token that has the `security_events` scope (or repo admin) would be needed to get real counts.
 3. **Workflows.** Workflow listings returned 0 for all repos, which was confirmed by verifying no `.github/workflows` directory exists in any repository. For repos with no workflows, "latest run conclusion" and "artifacts" are not applicable — reported as such rather than guessed.
 4. **Empty vs. errored.** Where a check genuinely returned an empty result (issues, PRs), the report states the count as 0. Where a check errored (code scanning), the report states it could not be determined.
+5. **Recording location.** Creating the tracking repository under the personal `HeziLiu` account was blocked by a `403 Resource not accessible by personal access token` error (two attempts). The repository was therefore created under the `mcpmark-eval-liuhezi` organization, which the token can write to. The audit itself covers the `HeziLiu` personal account's repositories as requested.
